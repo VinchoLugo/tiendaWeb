@@ -1,0 +1,20 @@
+:root {
+    --black: #1a1a1a;
+    --light-Black: #333;
+    --white: #fff;
+    --sky-blue: #00bfff;
+    --gold: #ffd700;
+    --deep-pink: #ff1493;
+}
+
+body{
+    background-color:var(--black);
+    color: var(--white);
+}
+
+header{
+    display: flex;
+    background-color: var(--light-Black);
+    
+}
+

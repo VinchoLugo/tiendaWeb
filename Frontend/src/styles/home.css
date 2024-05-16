@@ -7,14 +7,90 @@
     --deep-pink: #ff1493;
 }
 
-body{
-    background-color:var(--black);
+body {
+    background-color: var(--black);
     color: var(--white);
+    width: 100%;
+    justify-content: center;
+    margin: 0; /* Asegura que no haya margen en el body */
 }
 
-header{
+.header{
     display: flex;
     background-color: var(--light-Black);
-    
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 30px;
 }
 
+.logo{
+    max-width: 150px;
+}
+
+.icon{
+    max-height: 40px;
+}
+
+.searchBar{
+    border-radius: 10px;
+    background-color: var(--white);
+    height: 40px;
+    min-width: 200px; /* Tamaño mínimo de 200px */
+    max-width: 600px; /* Tamaño máximo de 600px */
+    width: 70%; /* Tamaño inicial del 80% del ancho de la ventana */
+    margin: 0 auto; /* Centra horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-box-shadow:0px 0px 10px 3px rgba(0,191,255,0.9);
+-moz-box-shadow: 0px 0px 10px 3px rgba(0,191,255,0.9);
+box-shadow: 0px 0px 10px 3px rgba(0,191,255,0.9);
+}
+
+.icon-search {
+    max-width: 30px;
+    cursor: pointer;
+}
+
+.searchBar button {
+    border: none;
+    background-color: transparent;
+}
+
+.searchBar input {
+    height: 30px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.searchBar input:focus {
+    outline: none; /* Quita el borde de enfoque */
+}
+
+.footer {
+    display: flex;
+    background-color: var(--light-Black);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0; /* Elimina el relleno lateral y establece 10px arriba y abajo */
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Abarca todo el ancho disponible */
+}
+
+.footer .logo {
+    margin-left: auto; /* Alinear el logo al lado izquierdo */
+    width: 80px;
+}
+
+.footerContent {
+    display: flex;
+    gap: 30px;
+}
+
+.footerContent a{
+    color: var(--white);
+    text-decoration: none;
+}

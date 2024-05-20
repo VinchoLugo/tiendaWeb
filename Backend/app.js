@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, '..', 'frontend'), {
   
 // Ruta para servir la página home.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'pages', 'wishlist.html'));
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'pages', 'home.html'));
 });
 
 // Iniciar el servidor

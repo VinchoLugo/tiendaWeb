@@ -1,0 +1,39 @@
+:root {
+    --black: #1a1a1a;
+    --light-Black: #333;
+    --dark-Black: rgba(0, 0, 0, 0.5);
+    --white: #fff;
+    --sky-blue: #00bfff;
+    --gold: #ffd700;
+    --deep-pink: #ff1493;
+    --navy: #000080;
+    --icons: #d9d8d9;
+}
+
+.wishlist{
+    padding: 0;
+    list-style-type: none;
+}
+
+.game{
+    display: flex;
+    gap: 20px;
+    background: var(--dark-Black);
+    padding: 10px;
+    border-radius: 10px;
+    align-items: flex-end;
+}
+
+.game-frontpage{
+    height: 100px;
+}
+
+.game p {
+    font-size: 20px;
+}
+
+.delete-icon {
+    margin-left: auto; /* Empuja la última imagen al extremo derecho */
+    height: 50px; /* Ajusta la altura según sea necesario */
+    align-self: center;
+}

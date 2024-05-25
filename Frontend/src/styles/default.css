@@ -34,7 +34,7 @@ body {
     color: var(--white);
     width: 100%;
     justify-content: center;
-    margin: 0; /* Asegura que no haya margen en el body */
+    margin: 0; 
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -63,10 +63,10 @@ body {
     border-radius: 10px;
     background-color: var(--white);
     height: 40px;
-    min-width: 200px; /* Tamaño mínimo de 200px */
-    max-width: 600px; /* Tamaño máximo de 600px */
-    width: 70%; /* Tamaño inicial del 80% del ancho de la ventana */
-    margin: 0 auto; /* Centra horizontalmente */
+    min-width: 200px; 
+    max-width: 600px; 
+    width: 70%; 
+    margin: 0 auto; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,14 +87,14 @@ body {
 
 .searchBar input {
     height: 30px;
-    width: 100%; /* Ocupa todo el ancho disponible */
+    width: 100%; 
     border: none;
     border-radius: 10px;
     padding-left: 10px;
 }
 
 .searchBar input:focus {
-    outline: none; /* Quita el borde de enfoque */
+    outline: none; 
 }
 
 .options{
@@ -123,13 +123,13 @@ main{
     background-color: var(--light-Black);
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px 0; /* Elimina el relleno lateral y establece 10px arriba y abajo */
+    padding: 10px 0; 
     bottom: 0;
-    width: 100%; /* Abarca todo el ancho disponible */
+    width: 100%; 
 }
 
 .footer .logo {
-    margin-left: auto; /* Alinear el logo al lado izquierdo */
+    margin-left: auto; 
     width: 80px;
 }
 

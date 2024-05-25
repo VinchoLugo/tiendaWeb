@@ -1,20 +1,86 @@
 :root {
     --black: #1a1a1a;
     --light-Black: #333;
+    --dark-Black: rgba(0, 0, 0, 0.5);
     --white: #fff;
     --sky-blue: #00bfff;
     --gold: #ffd700;
     --deep-pink: #ff1493;
+    --navy: #000080;
 }
 
-body{
-    background-color:var(--black);
+.principals{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--dark-Black);
+
+}
+
+.img-principals{
+    width: 100%;
+}
+
+.game-title{
+    text-align: left;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.sidebar{
+    background: var(--dark-Black);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.sidebar ul{
+    text-align: left;
+    list-style-type:none ;
+}
+.sidebar a{
+    text-decoration: none;
+    font-family: "Noto Sans", sans-serif;
     color: var(--white);
 }
 
-header{
-    display: flex;
-    background-color: var(--light-Black);
+.catalog{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* padding: 30px; */
+    gap: 30px;
     
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.game-card{
+    width: 30%;
+    text-align: center;
+    background: var(--dark-Black);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
+    box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
+
+}
+
+.game-card img{
+    width: 90%;
+    margin-top: 10px;
+}
+
+.game-info{
+    text-align: left;
+    margin-left: 5%;
+}

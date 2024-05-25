@@ -1,0 +1,144 @@
+:root {
+    --black: #1a1a1a;
+    --light-Black: #333;
+    --dark-Black: rgba(0, 0, 0, 0.5);
+    --white: #fff;
+    --sky-blue: #00bfff;
+    --gold: #ffd700;
+    --deep-pink: #ff1493;
+    --navy: #000080;
+}
+
+
+h3 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 30px;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+h4 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 15px;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    width: 100%;
+    justify-content: center;
+    margin: 0; /* Asegura que no haya margen en el body */
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.header{
+    display: flex;
+    background-color: var(--light-Black);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 10px;
+}
+
+.logo{
+    max-width: 150px;
+}
+
+.icon{
+    max-height: 40px;
+}
+
+.searchBar{
+    border-radius: 10px;
+    background-color: var(--white);
+    height: 40px;
+    min-width: 200px; /* Tamaño mínimo de 200px */
+    max-width: 600px; /* Tamaño máximo de 600px */
+    width: 70%; /* Tamaño inicial del 80% del ancho de la ventana */
+    margin: 0 auto; /* Centra horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-box-shadow:0px 0px 10px 3px rgba(0,191,255,0.9);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(0,191,255,0.9);
+    box-shadow: 0px 0px 10px 3px rgba(0,191,255,0.9);
+}
+
+.icon-search {
+    max-width: 30px;
+    cursor: pointer;
+}
+
+.searchBar button {
+    border: none;
+    background-color: transparent;
+}
+
+.searchBar input {
+    height: 30px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.searchBar input:focus {
+    outline: none; /* Quita el borde de enfoque */
+}
+
+.options{
+    display: flex;
+    gap: 20px;
+}
+
+.container{
+    max-width: 80%;
+    width: 80%;
+    background-color: var(--light-Black);
+    border-radius: 10px;
+    margin: 30px;
+    padding: 30px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footer {
+    display: flex;
+    background-color: var(--light-Black);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0; /* Elimina el relleno lateral y establece 10px arriba y abajo */
+    bottom: 0;
+    width: 100%; /* Abarca todo el ancho disponible */
+}
+
+.footer .logo {
+    margin-left: auto; /* Alinear el logo al lado izquierdo */
+    width: 80px;
+}
+
+.footerContent {
+    display: flex;
+    gap: 30px;
+}
+
+.footerContent a{
+    color: var(--white);
+    text-decoration: none;
+}

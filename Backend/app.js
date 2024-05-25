@@ -41,7 +41,9 @@ app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
 // Enrutador para manejar las rutas de las páginas
 const pageRouter = require("./routes/pagesRoutes");
+const steamRoutes = require('./routes/steamRoutes');
 app.use('/', pageRouter);
+app.use('/steam', steamRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);

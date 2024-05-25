@@ -4,7 +4,6 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configurar la carpeta de archivos estáticos y asegurar los tipos MIME correctos
 app.use(express.static(path.join(__dirname, 'Frontend'), {
   setHeaders: (res, path) => {
     if (path.endsWith('.css')) {
@@ -14,10 +13,18 @@ app.use(express.static(path.join(__dirname, 'Frontend'), {
 }));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Frontend', 'pages', 'register.html'));
+  res.sendFile(path.join(__dirname, 'Frontend', 'pages', 'home.html'));
 });
 
-// Iniciar el servidor
+app.get('/register', (req,res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'pages', 'register.html'))
+});
+
+app.get('/login', (req,res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'pages', 'login.html'))
+})
+
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

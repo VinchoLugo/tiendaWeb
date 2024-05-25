@@ -1,0 +1,88 @@
+:root {
+    --black: #1a1a1a;
+    --light-Black: #333;
+    --white: #fff;
+    --sky-blue: #00bfff;
+    --gold: #ffd700;
+    --deep-pink: #ff1493;
+}
+.container1{
+    margin-left: 70px;
+    margin-right: 70px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+.container2{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px;
+}
+.row{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column{
+    padding: 10px;
+    border: 1px solid #333;
+}
+.below{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+.above{
+    width: 950px;
+    height: 500px;
+}
+.right{
+    width: 350px;
+    height: 200px;
+}
+.namecontainer{
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    font-size: 24px;
+    font-weight: bold;
+}
+.main{
+    display: contents;
+}
+.buygame{
+    border: 1px solid #333;
+    margin: 70px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.textbuy{
+    margin-left: 20px;
+}
+.container3{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.buybutton{
+
+}
+.buybuttoncontainer{
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido al final del contenedor */
+    align-items: center; /* Centra verticalmente */
+    padding-right: 20px;
+}
+.buybutton {
+    padding: 10px 20px;
+    background-color: var(--sky-blue);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 5px;
+}
+.buybutton:hover {
+    background-color: var(--deep-pink);
+}

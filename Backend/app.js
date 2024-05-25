@@ -15,7 +15,11 @@ app.use(express.static(path.join(__dirname, '..', 'frontend'), {
   
 // Ruta para servir la página home.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'pages', 'home.html'));
+// <<<<<<< HEAD
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'pages', 'gameinfo.html'));
+// =======
+//   res.sendFile(path.join(__dirname, '..', 'frontend', 'pages', 'gameinfo.html'));
+// >>>>>>> 28cdd8eb7aa7d21421a94620a985d8a8307a0ba4
 });
 
 // Iniciar el servidor

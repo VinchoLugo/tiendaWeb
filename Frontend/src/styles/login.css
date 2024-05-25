@@ -1,0 +1,85 @@
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    color: #FFF;
+    width: 600px;
+    height: 600px;
+    background-color: #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    text-align: start;
+}
+
+.title-create {
+    color: gold;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.title-input {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.input {
+    margin-top: 15px;
+    width: 80%;  
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.button-signup{
+    margin-top: 40px;
+    width: 80%;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: gold;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.logo{
+    width: 150px;
+    margin-top: 15px;
+}
+
+.button-signup:hover{
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
+    box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
+    border: none;
+}
+
+.login-tag:hover{
+    color: gold;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+a.login-tag {
+    color: #000; 
+    font-weight: bold; 
+}

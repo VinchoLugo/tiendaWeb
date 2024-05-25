@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesChest</title>
-    <link rel="stylesheet" href="/Frontend/src/styles/home.css">
+
+    <link rel="stylesheet" href="/src/styles/default.css">
+    <link rel="stylesheet" href="/src/styles/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header class="header">
         <div>
-            <img src="/Frontend/src/imgs/logo.png" class="logo" alt="logo">
+            <a href="/pages/home.html">
+                <img src="/src/imgs/logo.png" class="logo" alt="logo">
+            </a>
         </div>
         
         <div class="searchBar">
@@ -17,17 +25,84 @@
             <button><img src="/Frontend/src/imgs/busqueda.png" alt="" class="icon-search"></button>
         </div>
 
-        <div>
-            <a href=""><img src="/Frontend/src/imgs/2.png" alt="userIcons" class="icon"></a>
-            <a href=""><img src="/Frontend/src/imgs/1.png" alt="shoppingCart" class="icon"></a>
+        <div class="options">
+            <a href=""><img src="/src/imgs/like.png" alt="Wishlist" class="icon"></a>
+            <a href=""><img src="/src/imgs/user.png" alt="userIcons" class="icon"></a>
+            <a href=""><img src="/src/imgs/shoppingCart.png" alt="shoppingCart" class="icon"></a>
+
         </div>
     </header>
 
+    <main class="main">
+        <div class="container">
+            <div class="principals">
+                <img src="/src/imgs/frontpage-AC.webp" alt="" class="img-principals">
+                <h3 class="game-title">Assassins Creed</h3>
+            </div>
+    
+            <div class="content">
+                <div class="sidebar">
+                    <h2>categorias</h2>
+                    <ul class="categories">
+                        <li><a href="">Accion</a></li>
+                        <li><a href="">Aventura</a></li>
+                        <li><a href="">Sandbox</a></li>
+                        <li><a href="">Estrategia</a></li>
+                    </ul>
+                </div>
+                <div class="catalog">
+                    <div class="game-card">
+                        <img src="/src/imgs/front-game.webp" alt="">
+                        <div class="game-info">
+                            <h4>Elden Ring</h4>
+                            <p>30$</p>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <img src="/src/imgs/front-game.webp" alt="">
+                        <div class="game-info">
+                            <h4>Elden Ring</h4>
+                            <p>30$</p>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <img src="/src/imgs/front-game.webp" alt="">
+                        <div class="game-info">
+                            <h4>Elden Ring</h4>
+                            <p>30$</p>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <img src="/src/imgs/front-game.webp" alt="">
+                        <div class="game-info">
+                            <h4>Elden Ring</h4>
+                            <p>30$</p>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <img src="/src/imgs/front-game.webp" alt="">
+                        <div class="game-info">
+                            <h4>Elden Ring</h4>
+                            <p>30$</p>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <img src="/src/imgs/front-game.webp" alt="">
+                        <div class="game-info">
+                            <h4>Elden Ring</h4>
+                            <p>30$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <footer class="footer">
         <div class="footerContent">
-            <a href=""><h3>Sobre nosotros</h3></a>
-            <a href=""><h3>Preguntas Frecuentes</h3></a>
-            <a href=""><h3>Reseñas</h3></a>
+            <a href=""><h4>Sobre nosotros</h4></a>
+            <a href=""><h4>Preguntas Frecuentes</h4></a>
+            <a href=""><h4>Reseñas</h4></a>
         </div>
 
         <div>

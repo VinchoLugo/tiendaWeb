@@ -8,68 +8,103 @@ async function fetchGameData(gameid) {
     }
 }
 
-async function fillGameData(gameid){
+async function fillGameData(gameid) {
     const gameData = await fetchGameData(gameid);
     const gameInfo = gameData[gameid].data;
-    document.querySelector('.name').innerText += gameInfo.name;
-    document.querySelector('.description').innerText += gameInfo.short_description;
+    document.querySelector('.name').innerText += ' ' + gameInfo.name;
+    document.querySelector('.description').innerText += ' ' + gameInfo.short_description;
     const genres = gameInfo.genres.map(genre => genre.description).join(', ');
-    document.querySelector('.genre').innerText += genres;
-    const carouselContainer = document.querySelector('#carousel');
-    const headerContainer = document.querySelector('#header'); // Contenedor para imágenes y videos en el header
+    document.querySelector('.genre').innerText += ' ' + genres;
+    document.querySelector('.age').innerText += ' ' + gameInfo.required_age;
+    document.querySelector('.developer').innerText += ' ' + gameInfo.publishers;
+    document.querySelector('.price').innerText += ' ' + gameInfo.price_overview.final_formatted;
 
-    // Agregar las imágenes al carrusel
-    gameInfo.screenshots.forEach(screenshot => {
-        const img = document.createElement('img');
-        img.classList.add('below');
-        img.src = screenshot.path_thumbnail;
-        img.className = 'carousel-item';
-        img.addEventListener('click', () => {
-            const headerImage = document.createElement('img');
-            headerImage.src = screenshot.path_full;
-            headerImage.className = 'full-image';
-            headerContainer.innerHTML = ''; // Limpiar el div
-            headerContainer.appendChild(headerImage);
-        });
-        carouselContainer.appendChild(img);
-    });
+    const carouselInner = document.querySelector('#carousel-inner');
+    const headerContainer = document.querySelector('#header');
 
-    // Agregar los videos al carrusel
-    gameInfo.movies.forEach(movie => {
+    // Función para crear elementos del carrusel
+    const createCarouselItem = (content, isActive) => {
+        const div = document.createElement('div');
+        div.className = 'carousel-item' + (isActive ? ' active' : '');
+        const itemContainer = document.createElement('div');
+        itemContainer.className = 'd-flex';
+        itemContainer.appendChild(content);
+        div.appendChild(itemContainer);
+        return div;
+    };
+
+    let itemCount = 0;
+    let carouselGroup;
+
+    // Agregar videos al carrusel
+    gameInfo.movies.forEach((movie, index) => {
         const video = document.createElement('video');
-        video.src = movie.mp4.max; // Usar el enlace del video mp4
-        video.controls = true; // Mostrar controles de video
-        video.className = 'carousel-item video-thumbnail'; // Añadir la clase 'video-thumbnail'
+        video.src = movie.mp4.max;
+        video.className = 'd-block';
+
+        if (itemCount % 4 === 0) {
+            carouselGroup = createCarouselItem(video, index === 0);
+            carouselInner.appendChild(carouselGroup);
+        } else {
+            carouselGroup.querySelector('.d-flex').appendChild(video);
+        }
+
+        itemCount++;
+
+        // Evento click para mostrar en el header
         video.addEventListener('click', () => {
             const headerVideo = document.createElement('video');
             headerVideo.src = movie.mp4.max;
             headerVideo.controls = true;
+            headerVideo.autoplay = true; // Auto play here
             headerVideo.className = 'full-video';
-            headerContainer.innerHTML = ''; // Limpiar el div
+            headerContainer.innerHTML = '';
             headerContainer.appendChild(headerVideo);
-            console.log("entro al click");
         });
-        carouselContainer.appendChild(video);
     });
 
-    // Iniciar con la primera imagen o video cargado
-    if (gameInfo.screenshots.length > 0) {
+    // Agregar imágenes al carrusel
+    gameInfo.screenshots.forEach((screenshot, index) => {
+        const img = document.createElement('img');
+        img.src = screenshot.path_thumbnail;
+        img.className = 'd-block';
+
+        if (itemCount % 4 === 0) {
+            carouselGroup = createCarouselItem(img, itemCount === 0 && gameInfo.movies.length === 0);
+            carouselInner.appendChild(carouselGroup);
+        } else {
+            carouselGroup.querySelector('.d-flex').appendChild(img);
+        }
+
+        itemCount++;
+
+        // Evento click para mostrar en el header
+        img.addEventListener('click', () => {
+            const headerImage = document.createElement('img');
+            headerImage.src = screenshot.path_full;
+            headerImage.className = 'full-image';
+            headerContainer.innerHTML = '';
+            headerContainer.appendChild(headerImage);
+        });
+    });
+
+    // Iniciar con el primer video cargado en el header
+    if (gameInfo.movies.length > 0) {
+        const firstVideo = document.createElement('video');
+        firstVideo.src = gameInfo.movies[0].mp4.max;
+        firstVideo.controls = true;
+        firstVideo.autoplay = true; // Auto play here
+        firstVideo.className = 'full-video';
+        headerContainer.appendChild(firstVideo);
+    } else if (gameInfo.screenshots.length > 0) {
         const firstImage = document.createElement('img');
         firstImage.src = gameInfo.screenshots[0].path_full;
         firstImage.className = 'full-image';
         headerContainer.appendChild(firstImage);
-    } else if (gameInfo.movies.length > 0) {
-        const firstVideo = document.createElement('video');
-        firstVideo.src = gameInfo.movies[0].mp4.max;
-        firstVideo.controls = true;
-        firstVideo.className = 'full-video';
-        headerContainer.appendChild(firstVideo);
     }
 }
 
 window.onload = function() {
-    // Supongamos que gameid lo obtienes de algún lugar, por ejemplo, de la URL
-    const gameid = '105600'; // Reemplaza 'ID_DEL_JUEGO' con el ID real del juego
+    const gameid = '339800'; // Reemplaza 'ID_DEL_JUEGO' con el ID real del juego
     fillGameData(gameid);
 };
-

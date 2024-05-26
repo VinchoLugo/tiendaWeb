@@ -142,3 +142,16 @@ main{
     color: var(--white);
     text-decoration: none;
 }
+
+.bodymamalon{
+    background-color: var(--black);
+    color: var(--white);
+    width: 100%;
+    justify-content: center;
+    margin: 0; 
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}

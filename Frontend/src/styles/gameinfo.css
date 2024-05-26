@@ -1,3 +1,17 @@
+/* Override d-block class for images inside the carousel */
+#carousel-inner img {
+    width: 200px; /* Ensures images fill their container */
+    height: 100px; /* Maintains aspect ratio */
+    margin-left: 10px;
+}
+
+/* Set explicit width and height for videos inside the carousel */
+#carousel-inner video {
+    width: 200px;
+    height: 100px;
+}
+
+/* Additional styles */
 :root {
     --black: #1a1a1a;
     --light-Black: #333;
@@ -6,73 +20,81 @@
     --gold: #ffd700;
     --deep-pink: #ff1493;
 }
-.container1{
+
+.container1 {
     margin-left: 70px;
     margin-right: 70px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 10px;
 }
-.container2{
+
+.container2 {
     display: grid;
     grid-template-rows: 1fr 2fr;
     gap: 10px;
 }
-.row{
+
+.row {
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.column{
+
+.column {
     padding: 10px;
     border: 1px solid #333;
 }
-.carousel-item{
-    width: 100px;
-    height: 100px;
-    margin-left: 10px;
-}
-.full-image{
+
+.full-image {
     width: 950px;
     height: 500px;
 }
-.right{
+
+.right {
     width: 350px;
     height: 200px;
 }
-.namecontainer{
+
+.namecontainer {
     margin-left: 70px;
     display: flex;
     flex-direction: column;
 }
-.name{
+
+.name {
     font-size: 24px;
     font-weight: bold;
 }
-.main{
+
+.main {
     display: contents;
 }
-.buygame{
+
+.buygame {
     border: 1px solid #333;
     margin: 70px;
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
-.textbuy{
+
+.textbuy {
     margin-left: 20px;
 }
-.container3{
+
+.container3 {
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
 
-.buybuttoncontainer{
+.buybuttoncontainer {
     display: flex;
     justify-content: flex-end; /* Alinea el contenido al final del contenedor */
     align-items: center; /* Centra verticalmente */
     padding-right: 20px;
 }
+
 .buybutton {
     padding: 10px 20px;
     background-color: var(--sky-blue);
@@ -81,13 +103,26 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
 .buybutton:hover {
     background-color: var(--deep-pink);
 }
-.full-video{
+
+.full-video {
     width: 950px;
     height: 500px;
     margin: 0 auto;
     display: block; /* Hace que el video se centre horizontalmente */
     margin-top: 20px; /* Espacio entre el video y otros elementos */
+}
+
+.container3 {
+    position: relative;
+}
+
+.buybuttoncontainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px; /* Espacio opcional para dar margen al botón */
 }

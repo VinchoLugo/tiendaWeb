@@ -28,12 +28,12 @@
     padding: 10px;
     border: 1px solid #333;
 }
-.below{
+.carousel-item{
     width: 100px;
     height: 100px;
     margin-left: 10px;
 }
-.above{
+.full-image{
     width: 950px;
     height: 500px;
 }
@@ -66,9 +66,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
-.buybutton{
 
-}
 .buybuttoncontainer{
     display: flex;
     justify-content: flex-end; /* Alinea el contenido al final del contenedor */
@@ -85,4 +83,11 @@
 }
 .buybutton:hover {
     background-color: var(--deep-pink);
+}
+.full-video{
+    width: 950px;
+    height: 500px;
+    margin: 0 auto;
+    display: block; /* Hace que el video se centre horizontalmente */
+    margin-top: 20px; /* Espacio entre el video y otros elementos */
 }

@@ -2,8 +2,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h3 {
+.textCard {
+    margin: 4px;
+    margin-left: 0px;
     font-size: 15px;
+}
+
+* {
+    box-sizing: content-box !important; /* O el valor que desees */
 }
 
 p {
@@ -22,7 +28,7 @@ p {
 }
 
 
-.card {
+.cardmamalon {
     background-color: #191919;
     color: #ffffff;
     border-radius: 8px;
@@ -35,7 +41,7 @@ p {
     cursor: pointer;
 }
 
-.card img {
+.cardmamalon img {
     max-width: 100%;
     border-radius: 8px;
 }

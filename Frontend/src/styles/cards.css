@@ -1,31 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #333333;
 }
 
-h1 {
-    text-align: center;
+h3 {
+    font-size: 15px;
+}
+
+p {
+    font-size: 13px;
 }
 
 #juegos-lista {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+    justify-content: space-around; /* Distribuye el espacio alrededor de las tarjetas */
+    align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+    gap: 30px;
+    
+    flex-direction: row;
+    
 }
 
+
 .card {
-    border: 1px solid #3b3b3b;
     background-color: #191919;
     color: #ffffff;
     border-radius: 8px;
     padding: 16px;
     max-width: 200px;
+    max-height: auto;
     text-align: left;
+    border: 1px solid var(--gold);
+    box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
+    cursor: pointer;
 }
 
 .card img {
     max-width: 100%;
-    height: auto;
     border-radius: 8px;
 }

@@ -1,6 +1,6 @@
 async function fetchGameData(gameid) {
     try {
-        const response = await fetch(`/steam/${gameid}`);
+        const response = await fetch(`http://127.0.0.1:3000/steam/${gameid}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -105,6 +105,8 @@ async function fillGameData(gameid) {
 }
 
 window.onload = function() {
-    const gameid = '339800'; // Reemplaza 'ID_DEL_JUEGO' con el ID real del juego
-    fillGameData(gameid);
+    const urlParams = new URLSearchParams(window.location.search);
+    const appid = urlParams.get('appid');
+
+    fillGameData(appid);
 };

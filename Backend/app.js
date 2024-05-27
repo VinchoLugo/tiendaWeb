@@ -4,21 +4,21 @@ const app = express();
 const mysql = require('mysql2');
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
-const conexion = mysql.createConnection({
+/*const conexion = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "admin1234",
   database: "tiendaweb"
-});
+});*/
 
-// Middleware para servir archivos estáticos
+//Middleware para servir archivos estáticos
 app.use(cors({
   origin: 'http://127.0.0.1:5500',
   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['X-Requested-With', 'Content-Type'],
   credentials: true
 }));
-
+/*
 conexion.connect((err) => {
   if (err) {
       console.error('Error al conectar a la base de datos:', err);
@@ -36,7 +36,7 @@ app.get('/juegos', (req, res) => {
       res.json(resultados);
   });
 });
-
+*/
 app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
 // Enrutador para manejar las rutas de las páginas

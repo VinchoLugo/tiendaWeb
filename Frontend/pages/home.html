@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesChest</title>
 
-    <link rel="stylesheet" href="/src/styles/default.css">
-    <link rel="stylesheet" href="/src/styles/home.css">
+    <link rel="stylesheet" href="/Frontend/src/styles/default.css">
+    <link rel="stylesheet" href="/Frontend/src/styles/home.css">
+    <link rel="stylesheet" href="/Frontend/src/styles/cards.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -15,8 +16,8 @@
 <body>
     <header class="header">
         <div>
-            <a href="/pages/home.html">
-                <img src="/src/imgs/logo.png" class="logo" alt="logo">
+            <a href="/Frontend/pages/home.html">
+                <img src="/Frontend/src/imgs/logo.png" class="logo" alt="logo">
             </a>
         </div>
         
@@ -26,9 +27,9 @@
         </div>
 
         <div class="options">
-            <a href=""><img src="/src/imgs/like.png" alt="Wishlist" class="icon"></a>
-            <a href=""><img src="/src/imgs/user.png" alt="userIcons" class="icon"></a>
-            <a href=""><img src="/src/imgs/shoppingCart.png" alt="shoppingCart" class="icon"></a>
+            <a href=""><img src="/Frontend/src/imgs/like.png" alt="Wishlist" class="icon"></a>
+            <a href=""><img src="/Frontend/src/imgs/user.png" alt="userIcons" class="icon"></a>
+            <a href=""><img src="/Frontend/src/imgs/shoppingCart.png" alt="shoppingCart" class="icon"></a>
 
         </div>
     </header>
@@ -36,7 +37,7 @@
     <main class="main">
         <div class="container">
             <div class="principals">
-                <img src="/src/imgs/frontpage-AC.webp" alt="" class="img-principals">
+                <img src="/Frontend/src/imgs/frontpage-AC.webp" alt="" class="img-principals">
                 <h3 class="game-title">Assassins Creed</h3>
             </div>
     
@@ -51,49 +52,11 @@
                     </ul>
                 </div>
                 <div class="catalog">
-                    <div class="game-card">
-                        <img src="/src/imgs/front-game.webp" alt="">
-                        <div class="game-info">
-                            <h4>Elden Ring</h4>
-                            <p>30$</p>
-                        </div>
+                    <div id="juegos-lista">
+                        <!-- Aquí se cargarán las cartas -->
                     </div>
-                    <div class="game-card">
-                        <img src="/src/imgs/front-game.webp" alt="">
-                        <div class="game-info">
-                            <h4>Elden Ring</h4>
-                            <p>30$</p>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="/src/imgs/front-game.webp" alt="">
-                        <div class="game-info">
-                            <h4>Elden Ring</h4>
-                            <p>30$</p>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="/src/imgs/front-game.webp" alt="">
-                        <div class="game-info">
-                            <h4>Elden Ring</h4>
-                            <p>30$</p>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="/src/imgs/front-game.webp" alt="">
-                        <div class="game-info">
-                            <h4>Elden Ring</h4>
-                            <p>30$</p>
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <img src="/src/imgs/front-game.webp" alt="">
-                        <div class="game-info">
-                            <h4>Elden Ring</h4>
-                            <p>30$</p>
-                        </div>
-                    </div>
-                </div>
+                    <script src="/Frontend/services/home.js"></script>
+                </div> 
             </div>
         </div>
     </main>

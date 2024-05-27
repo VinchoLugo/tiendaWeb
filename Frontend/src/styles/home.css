@@ -49,7 +49,25 @@
     font-family: "Noto Sans", sans-serif;
     color: var(--white);
 }
-
-
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    background-color: var(--white);
+    color: #333;
+    top: 120px;
+    width: 100%; /* Establece el ancho al 100% del contenedor */
+    max-width: 600px; /* Ajusta el ancho máximo si es necesario */
+}
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
 
 

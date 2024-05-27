@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesChest</title>
 
-    <link rel="stylesheet" href="/Frontend/src/styles/default.css">
-    <link rel="stylesheet" href="/Frontend/src/styles/home.css">
-    <link rel="stylesheet" href="/Frontend/src/styles/cards.css">
+    <link rel="stylesheet" href="/src/styles/default.css">
+    <link rel="stylesheet" href="/src/styles/home.css">
+    <link rel="stylesheet" href="/src/styles/cards.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -16,20 +16,22 @@
 <body>
     <header class="header">
         <div>
-            <a href="/Frontend/pages/home.html">
-                <img src="/Frontend/src/imgs/logo.png" class="logo" alt="logo">
+            <a href="/pages/home.html">
+                <img src="/src/imgs/logo.png" class="logo" alt="logo">
             </a>
         </div>
         
         <div class="searchBar">
-            <input type="text">
-            <button><img src="/Frontend/src/imgs/busqueda.png" alt="" class="icon-search"></button>
+            <input type="text" id="searchInput" placeholder="Search for games...">
+            <button id="searchButton"><img src="/src/imgs/busqueda.png" alt="search" class="icon-search"></button>
+            <div id="autocomplete-list" class="autocomplete-items"></div>
         </div>
+    
 
         <div class="options">
-            <a href=""><img src="/Frontend/src/imgs/like.png" alt="Wishlist" class="icon"></a>
-            <a href=""><img src="/Frontend/src/imgs/user.png" alt="userIcons" class="icon"></a>
-            <a href=""><img src="/Frontend/src/imgs/shoppingCart.png" alt="shoppingCart" class="icon"></a>
+            <a href=""><img src="/src/imgs/like.png" alt="Wishlist" class="icon"></a>
+            <a href=""><img src="/src/imgs/user.png" alt="userIcons" class="icon"></a>
+            <a href=""><img src="/src/imgs/shoppingCart.png" alt="shoppingCart" class="icon"></a>
 
         </div>
     </header>
@@ -37,7 +39,7 @@
     <main class="main">
         <div class="container">
             <div class="principals">
-                <img src="/Frontend/src/imgs/frontpage-AC.webp" alt="" class="img-principals">
+                <img src="/src/imgs/frontpage-AC.webp" alt="" class="img-principals">
                 <h3 class="game-title">Assassins Creed</h3>
             </div>
     
@@ -55,7 +57,7 @@
                     <div id="juegos-lista">
                         <!-- Aquí se cargarán las cartas -->
                     </div>
-                    <script src="/Frontend/services/home.js"></script>
+                    <script src="/services/home.js"></script>
                 </div> 
             </div>
         </div>
@@ -69,7 +71,7 @@
         </div>
 
         <div>
-            <a href=""><img src="/Frontend/src/imgs/logo.png" class="logo" alt="logo"></a>
+            <a href=""><img src="/src/imgs/logo.png" class="logo" alt="logo"></a>
         </div>
     </footer>
     

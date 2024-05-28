@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesChest</title>
     <script src="/services/user.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/src/styles/default.css">
     <link rel="stylesheet" href="/src/styles/home.css">
     <link rel="stylesheet" href="/src/styles/cards.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
 </head>
-<body>
+<body class="bodymamalon">
     <header class="header">
         <div>
             <a href="/pages/home.html">
@@ -21,32 +24,52 @@
         </div>
         
         <div class="searchBar">
-            <input type="text">
-            <button><img src="/src/imgs/busqueda.png" alt="" class="icon-search"></button>
+            <input type="text" id="searchInput" placeholder="Search for games...">
+            <button id="searchButton"><img src="/src/imgs/busqueda.png" alt="search" class="icon-search"></button>
+            <div id="autocomplete-list" class="autocomplete-items"></div>
         </div>
 
         <div class="options">
             <a href=""><img src="/src/imgs/like.png" alt="Wishlist" class="icon"></a>
             <a href="javascript:void(0)" class="icon-user"><img src="/src/imgs/user.png" alt="userIcons" class="icon"></a>
             <a href=""><img src="/src/imgs/shoppingCart.png" alt="shoppingCart" class="icon"></a>
+
+
         </div>
     </header>
 
     <main class="main">
         <div class="container">
             <div class="principals">
-                <img src="/src/imgs/frontpage-AC.webp" alt="" class="img-principals">
-                <h3 class="game-title">Assassins Creed</h3>
+                <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" id="carousel-inner">
+                        <!-- Las imágenes y videos se añadirán aquí -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
+            
     
             <div class="content">
                 <div class="sidebar">
                     <h2>categorias</h2>
-                    <ul class="categories">
-                        <li><a href="">Accion</a></li>
-                        <li><a href="">Aventura</a></li>
-                        <li><a href="">Sandbox</a></li>
-                        <li><a href="">Estrategia</a></li>
+                    <ul class="genres">
+                        <li><button data-genre="Indie">Indie</button></li>
+                        <li><button data-genre="Accion">Acción</button></li>
+                        <li><button data-genre="Aventura">Aventura</button></li>
+                        <li><button data-genre="Rogue">Rogue</button></li>
+                        <li><button data-genre="Sandbox">Sandbox</button></li>
+                        <li><button data-genre="Shooter">Shooter</button></li>
+                        <li><button data-genre="Terror">Terror</button></li>
+                        <li><button data-genre="Rol">Rol</button></li>
+                        <li><button data-genre="Cooperativo">Cooperativo</button></li>
                     </ul>
                 </div>
                 <div class="catalog">
@@ -70,6 +93,7 @@
             <a href=""><img src="/src/imgs/logo.png" class="logo" alt="logo"></a>
         </div>
     </footer>
+
     
     <div id="userModal" class="modal">
         <div class="modal-content">
@@ -81,5 +105,8 @@
             <a href="/logout" class="logout-button">Cerrar sesión</a>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 </html>

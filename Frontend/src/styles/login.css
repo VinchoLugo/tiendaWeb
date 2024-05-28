@@ -10,14 +10,22 @@ body {
 .container {
     color: #FFF;
     width: 600px;
-    height: 600px;
+    height: auto; /* Cambia la altura a auto */
     background-color: #333;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15px;
+    padding: 20px; /* Añadir padding para mejor presentación */
     text-align: start;
+    box-sizing: border-box;
+}
+
+.form-container {
+    width: 100%; /* Asegura que el formulario ocupe el 100% del ancho del contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title-create {
@@ -41,11 +49,11 @@ body {
     box-sizing: border-box;
 }
 
-.input:focus{
+.input:focus {
     outline: none;
 }
 
-.button-signup{
+.button-signup {
     margin-top: 40px;
     width: 80%;
     padding: 10px;
@@ -57,19 +65,19 @@ body {
     font-weight: 600;
 }
 
-.logo{
+.logo {
     width: 150px;
     margin-top: 15px;
 }
 
-.button-signup:hover{
+.button-signup:hover {
     -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
     -moz-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
     box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
     border: none;
 }
 
-.login-tag:hover{
+.login-tag:hover {
     color: gold;
     cursor: pointer;
 }
@@ -80,6 +88,16 @@ a {
 }
 
 a.login-tag {
+    color: #000; 
+    font-weight: bold; 
+}
+
+.password:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+a.password {
     color: #000; 
     font-weight: bold; 
 }

@@ -1,6 +1,6 @@
 async function fetchGameData(gameid) {
     try {
-        const response = await fetch(`http://127.0.0.1:3000/steam/${gameid}`);
+        const response = await fetch(`/steam/${gameid}`);
         const data = await response.json();
         return data;
     } catch (error) {

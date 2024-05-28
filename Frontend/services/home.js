@@ -1,6 +1,6 @@
 async function fetchGameData(gameid) {
     try {
-        const response = await fetch(`http://127.0.0.1:3000/steam/${gameid}`);
+        const response = await fetch(`/steam/${gameid}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -10,7 +10,7 @@ async function fetchGameData(gameid) {
 
 async function fillGameData() {
     try {
-        const response = await fetch('/Frontend/src/catalog.json');
+        const response = await fetch('/src/catalog.json');
         const games = await response.json();
 
         const container = document.querySelector('#juegos-lista');
@@ -42,7 +42,7 @@ async function fillGameData() {
         
                 // Agrega un evento click a la tarjeta para redirigir a gameinfo.html con el appid
                 card.addEventListener('click', () => {
-                    window.location.href = `/Frontend/pages/gameinfo.html?appid=${game.appid}`;
+                    window.location.href = `/pages/gameinfo.html?appid=${game.appid}`;
                 });
             }
         });

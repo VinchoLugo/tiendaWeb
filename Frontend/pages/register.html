@@ -14,24 +14,34 @@
         <h3 class="title-create">
             Creando cuenta
         </h3>
+    <form action="/register" method="POST" class="form-container">
+
+        <span class="title-input">
+            Ingresa un nombre de usuario
+        </span>
+
+        <input type="text" name="userName" class="input">
 
         <span class="title-input">
             Introduce tu correo electronico
         </span>
 
-        <input type="text" class="input">
+        <input type="email" name="email" class="input">
 
         <span class="title-input">
             Crea una contraseña
         </span>
 
-        <input type="text" class="input">
+        <input type="password" name="contrasena" class="input">
 
         <button type="submit" class="button-signup">
             Registrate
         </button>
 
+    </form>
+
         <span class="title-input">Ya tienes una cuenta?<a href="/login"><span class="login-tag"> Inicia sesion</span></a></span>
+
     </div>
 </body>
 </html>

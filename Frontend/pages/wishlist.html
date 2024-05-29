@@ -19,8 +19,9 @@
         </div>
         
         <div class="searchBar">
-            <input type="text">
-            <button><img src="/src/imgs/busqueda.png" alt="" class="icon-search"></button>
+            <input type="text" id="searchInput" placeholder="Search for games...">
+            <button id="searchButton"><img src="/src/imgs/busqueda.png" alt="search" class="icon-search"></button>
+            <div id="autocomplete-list" class="autocomplete-items"></div>
         </div>
 
         <div class="options">
@@ -53,6 +54,6 @@
             <a href=""><img src="/src/imgs/logo.png" class="logo" alt="logo"></a>
         </div>
     </footer>
-    
+    <script src="/services/searchBar.js"></script>
 </body>
 </html>

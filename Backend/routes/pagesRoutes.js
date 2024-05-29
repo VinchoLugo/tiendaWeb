@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require('path');
 const userController = require('../controllers/userController');
+const passwordController = require('../controllers/passwordController');
 const bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -25,19 +26,26 @@ router.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'login.html'));
 });
 
+router.get('/requestNewPassword', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'requestNewPassword.html'));
+});
+
 router.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'register.html'));
 });
-
-router.get('/purchase', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'purchase.html'));
-});
-
 
 router.post('/login', userController.loginUser);
 router.get('/logout', userController.logoutUser);
 
 router.post('/register', userController.registerUser);
+
+// Rutas para recuperación de contraseña
+router.post('/forgot-password', passwordController.sendResetEmail);
+router.get('/resetPassword/:token', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'resetPassword.html'));
+});
+
+router.post('/resetPassword', passwordController.resetPassword);
 
 router.get('/get-user', (req, res) => {
     if (req.session.user && req.session.user.email) {
@@ -46,8 +54,5 @@ router.get('/get-user', (req, res) => {
         res.status(401).json({ error: 'Usuario no autenticado' });
     }
 });
-
-
-
 
 module.exports = router;

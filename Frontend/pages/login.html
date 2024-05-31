@@ -8,30 +8,25 @@
 </head>
 <body>
     <div class="container">
-
         <img src="../src/img/logo.png" class="logo">
-
         <h3 class="title-create">
             Inicia Sesion
         </h3>
-
-        <span class="title-input">
-            Introduce tu correo electronico
-        </span>
-
-        <input type="text" class="input">
-
-        <span class="title-input">
-            Crea una contraseña
-        </span>
-
-        <input type="text" class="input">
-
-        <button type="submit" class="button-signup">
-            Inicia sesion
-        </button>
-
-        <span class="title-input">Aun no tienes una cuenta?<a href="/register"><span class="login-tag"> Registrate</span></a></span>
+        <form action="/login" method="POST" class="form-container">
+            <span class="title-input">
+                Introduce tu correo electronico
+            </span>
+            <input type="text" name="email" class="input">
+            <span class="title-input">
+                Introduce tu contraseña
+            </span>
+            <input type="password" name="contrasena" class="input">
+            <button type="submit" class="button-signup">
+                Inicia sesion
+            </button>
+            <span class="title-input">Aun no tienes una cuenta?<a href="/register"><span class="login-tag"> Registrate</span></a></span>
+            <span class="title-input">Olvidaste tu contraseña?<a href="/requestNewPassword"><span class="password"> Da clic aqui</span></a></span>
+        </form>
     </div>
 </body>
 </html>

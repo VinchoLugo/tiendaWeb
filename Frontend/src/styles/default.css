@@ -7,31 +7,30 @@
     --gold: #ffd700;
     --deep-pink: #ff1493;
     --navy: #000080;
+
+    /* Variables por defecto (modo oscuro) */
+    --background-color: var(--black);
+    --text-color: var(--white);
+    --header-background: var(--light-Black);
+    --container-background: var(--light-Black);
+    --input-background: var(--white);
+    --input-color: var(--light-Black);
 }
 
-
-h3 {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 30px;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
+.light-mode {
+    /* Variables para el modo claro */
+    --background-color: var(--white);
+    --text-color: var(--black);
+    --header-background: #e0e0e0;
+    --container-background: #f0f0f0;
+    --input-background: #333;
+    --input-color: var(--white);
 }
 
-h4 {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 15px;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-}
-
-
+/* Estilos generales usando las variables */
 body {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: var(--background-color);
+    color: var(--text-color);
     width: 100%;
     justify-content: center;
     margin: 0; 
@@ -42,15 +41,16 @@ body {
     font-variation-settings: "wdth" 100;
 }
 
-.header{
+.header {
     display: flex;
-    background-color: var(--light-Black);
+    background-color: var(--header-background);
     justify-content: space-evenly;
     align-items: center;
     padding: 10px 30px;
     gap: 10px;
 }
 
+<<<<<<< HEAD
 .logo{
     max-width: 100px;
     padding: 0px 20px 0px 10px;
@@ -60,11 +60,20 @@ body {
 .icon{
     max-height: 30px;
     padding: 0px 20px 0px 10px;
+=======
+.logo {
+    max-width: 150px;
 }
 
-.searchBar{
+.icon {
+    max-height: 40px;
+>>>>>>> 9622e2fe00112766ecb9524133826d8d69d4ce89
+}
+
+.searchBar {
     border-radius: 10px;
-    background-color: var(--white);
+    background-color: var(--input-background);
+    color: var(--input-color);
     height: 40px;
     min-width: 200px; 
     max-width: 750px; 
@@ -99,30 +108,29 @@ body {
     outline: none; 
 }
 
-.options{
+.options {
     display: flex;
     gap: 20px;
 }
 
-.container{
+.container {
     max-width: 80%;
     width: 80%;
-    background-color: var(--light-Black);
+    background-color: var(--container-background);
     border-radius: 10px;
     margin: 30px;
     padding: 30px;
 }
 
-main{
+main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
 .footer {
     display: flex;
-    background-color: var(--light-Black);
+    background-color: var(--header-background);
     justify-content: space-evenly;
     align-items: center;
     padding: 10px 0; 
@@ -140,14 +148,14 @@ main{
     gap: 30px;
 }
 
-.footerContent a{
-    color: var(--white);
+.footerContent a {
+    color: var(--text-color);
     text-decoration: none;
 }
 
-.bodymamalon{
-    background-color: var(--black);
-    color: var(--white);
+.bodymamalon {
+    background-color: var(--background-color);
+    color: var(--text-color);
     width: 100%;
     justify-content: center;
     margin: 0; 
@@ -156,4 +164,26 @@ main{
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    background-color: var(--input-background);
+    color: var(--input-color);
+    top: 120px;
+    width: 100%; /* Establece el ancho al 100% del contenedor */
+    max-width: 600px; /* Ajusta el ancho máximo si es necesario */
+    z-index: 9999; /* Asegúrate de que esté por encima de otros elementos */
+}
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--input-background);
+    border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
 }

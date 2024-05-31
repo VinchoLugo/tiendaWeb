@@ -169,7 +169,7 @@ window.onload = function() {
     fetchAndStoreGameData();
     createCarousel();
 };
-
+/*
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
     const autocompleteList = document.getElementById('autocomplete-list');
@@ -238,4 +238,4 @@ window.onload = function() {
             autocompleteList.innerHTML = '';
         }
     });
-
+*/

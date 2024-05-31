@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 :root {
     --black: #1a1a1a;
     --light-Black: #333;
@@ -10,30 +11,118 @@
     --icons: #d9d8d9;
 }
 
-.wishlist{
-    padding: 0;
-    list-style-type: none;
+.buybuttoncontainer {
+    text-align: center;
 }
 
-.game{
+.buybutton {
+    padding: 10px 20px;
+    background-color: var(--deep-pink);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buybutton:hover {
+    background-color: var(--gold);
+}
+
+.footerContent h4 {
+    margin: 10px 0;
+}
+
+.cart-container {
     display: flex;
+    flex-direction: column;
     gap: 20px;
+    margin: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: var(--dark-Black);
-    padding: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
     border-radius: 10px;
-    align-items: flex-end;
+    width: 100%;
+    border: 2px solid var(--gold);
+    box-shadow: 0px 0px 10px 3px var(--gold);
+    
 }
 
-.game-frontpage{
+.cart-item img {
     height: 100px;
+    border-radius: 10px;
 }
 
-.game p {
+.cart-item p {
+    margin: 0 20px;
+}
+
+.cart-item .quantity, .cart-item .total {
+    font-size: 18px;
+}
+
+.cart-item .remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
     font-size: 20px;
 }
 
-.delete-icon {
-    margin-left: auto; /* Empuja la última imagen al extremo derecho */
-    height: 50px; /* Ajusta la altura según sea necesario */
-    align-self: center;
+.cart-item .remove-button:hover {
+    color: var(--gold);
 }
+
+.remove-item-button{
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-family: 'Tilt Neon';
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 2px solid #ffffffd4;
+    transition: 0.5s ease;
+    user-select: none;
+}
+
+.remove-item-button:hover,
+.remove-item-button:focus {
+    color: #ffffff;
+    background: #f02121;
+    border: 1px solid #f02121;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #f02121;
+  }
+
+.btn-danger{
+    border-radius: 8px;
+    font-size: 17px;
+    font-family: 'Tilt Neon';
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 2px solid #ffffffd4;
+    transition: 0.5s ease;
+    user-select: none;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    color: #ffffff;
+    background: #f02121;
+    border: 1px solid #f02121;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #f02121;
+  }

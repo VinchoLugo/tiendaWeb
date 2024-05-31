@@ -36,4 +36,8 @@ router.get('/register', (req, res) => {
 router.get('/wishlist', (req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'wishlist.html'));
 });
+
+router.get('/cart', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'shoppingcart.html'));
+});
 module.exports = router;

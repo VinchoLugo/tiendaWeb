@@ -11,6 +11,7 @@ async function fetchGameData(gameid) {
 async function fillGameData(gameid) {
     const gameData = await fetchGameData(gameid);
     const gameInfo = gameData[gameid].data;
+
     document.querySelector('.name').innerText += ' ' + gameInfo.name;
     document.querySelector('.description').innerText += ' ' + gameInfo.short_description;
     const genres = gameInfo.genres.map(genre => genre.description).join(', ');
@@ -22,7 +23,6 @@ async function fillGameData(gameid) {
     const carouselInner = document.querySelector('#carousel-inner');
     const headerContainer = document.querySelector('#header');
 
-    // Función para crear elementos del carrusel
     const createCarouselItem = (content, isActive) => {
         const div = document.createElement('div');
         div.className = 'carousel-item' + (isActive ? ' active' : '');
@@ -36,7 +36,6 @@ async function fillGameData(gameid) {
     let itemCount = 0;
     let carouselGroup;
 
-    // Agregar videos al carrusel
     gameInfo.movies.forEach((movie, index) => {
         const video = document.createElement('video');
         video.src = movie.mp4.max;
@@ -51,19 +50,17 @@ async function fillGameData(gameid) {
 
         itemCount++;
 
-        // Evento click para mostrar en el header
         video.addEventListener('click', () => {
             const headerVideo = document.createElement('video');
             headerVideo.src = movie.mp4.max;
             headerVideo.controls = true;
-            headerVideo.autoplay = true; // Auto play here
+            headerVideo.autoplay = true;
             headerVideo.className = 'full-video';
             headerContainer.innerHTML = '';
             headerContainer.appendChild(headerVideo);
         });
     });
 
-    // Agregar imágenes al carrusel
     gameInfo.screenshots.forEach((screenshot, index) => {
         const img = document.createElement('img');
         img.src = screenshot.path_thumbnail;
@@ -78,7 +75,6 @@ async function fillGameData(gameid) {
 
         itemCount++;
 
-        // Evento click para mostrar en el header
         img.addEventListener('click', () => {
             const headerImage = document.createElement('img');
             headerImage.src = screenshot.path_full;
@@ -88,12 +84,11 @@ async function fillGameData(gameid) {
         });
     });
 
-    // Iniciar con el primer video cargado en el header
     if (gameInfo.movies.length > 0) {
         const firstVideo = document.createElement('video');
         firstVideo.src = gameInfo.movies[0].mp4.max;
         firstVideo.controls = true;
-        firstVideo.autoplay = true; // Auto play here
+        firstVideo.autoplay = true;
         firstVideo.className = 'full-video';
         headerContainer.appendChild(firstVideo);
     } else if (gameInfo.screenshots.length > 0) {
@@ -102,7 +97,33 @@ async function fillGameData(gameid) {
         firstImage.className = 'full-image';
         headerContainer.appendChild(firstImage);
     }
+
+    document.querySelector(".buybutton").addEventListener("click", () => {
+        addToCart(gameInfo);
+    });
 }
+
+function addToCart(game) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingGame = cart.find(item => item.id === game.steam_appid);
+
+    if (existingGame) {
+        existingGame.quantity++;
+    } else {
+        const gameItem = {
+            id: game.steam_appid,
+            name: game.name,
+            price: game.price_overview.final,
+            quantity: 1,
+            header_image: game.header_image,
+        };
+        cart.push(gameItem);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${game.name} ha sido añadido al carrito.`);
+}
+
 
 window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);

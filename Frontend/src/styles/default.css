@@ -1,9 +1,9 @@
 :root {
     --black: #1a1a1a;
-    --light-Black: #333;
+    --light-Black: #121212;
     --dark-Black: rgba(0, 0, 0, 0.5);
     --white: #fff;
-    --sky-blue: #00bfff;
+    --sky-blue: #008cff;
     --gold: #ffd700;
     --deep-pink: #ff1493;
     --navy: #000080;
@@ -52,11 +52,14 @@ body {
 }
 
 .logo{
-    max-width: 150px;
+    max-width: 100px;
+    padding: 0px 20px 0px 10px;
 }
 
+
 .icon{
-    max-height: 40px;
+    max-height: 30px;
+    padding: 0px 20px 0px 10px;
 }
 
 .searchBar{
@@ -64,15 +67,14 @@ body {
     background-color: var(--white);
     height: 40px;
     min-width: 200px; 
-    max-width: 600px; 
+    max-width: 750px; 
     width: 70%; 
     margin: 0 auto; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    -webkit-box-shadow:0px 0px 10px 3px rgba(0,191,255,0.9);
-    -moz-box-shadow: 0px 0px 10px 3px rgba(0,191,255,0.9);
-    box-shadow: 0px 0px 10px 3px rgba(0,191,255,0.9);
+    border: 3px solid var(--sky-blue);
+    box-shadow: 0px 0px 10px 3px var(--sky-blue);
 }
 
 .icon-search {

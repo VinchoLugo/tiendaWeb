@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
 /* Override d-block class for images inside the carousel */
 #carousel-inner img {
     width: 200px; /* Ensures images fill their container */
@@ -14,11 +16,13 @@
 /* Additional styles */
 :root {
     --black: #1a1a1a;
-    --light-Black: #333;
+    --light-Black: #121212;
+    --dark-Black: rgba(0, 0, 0, 0.5);
     --white: #fff;
-    --sky-blue: #00bfff;
+    --sky-blue: #008cff;
     --gold: #ffd700;
     --deep-pink: #ff1493;
+    --navy: #000080;
 }
 
 .container1 {
@@ -27,6 +31,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 10px;
+    
 }
 
 .container2 {
@@ -86,6 +91,8 @@
 .container3 {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    
+    border-radius: 10px;
 }
 
 .buybuttoncontainer {
@@ -95,18 +102,34 @@
     padding-right: 20px;
 }
 
-.buybutton {
+.buybutton{
     padding: 10px 20px;
-    background-color: var(--sky-blue);
-    border: none;
-    color: var(--white);
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-family: 'Tilt Neon';
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
     cursor: pointer;
-    border-radius: 5px;
+    box-shadow: transparent;
+    border: 2px solid #ffffffd4;
+    transition: 0.5s ease;
+    user-select: none;
 }
 
-.buybutton:hover {
-    background-color: var(--deep-pink);
-}
+.buybutton:hover,
+.buybutton:focus {
+    color: #ffffff;
+    background: var(--deep-pink);
+    border: 1px solid var(--deep-pink);
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px var(--deep-pink), 0 0 10px var(--deep-pink), 0 0 20px var(--deep-pink),
+      0 0 40px var(--deep-pink);
+  }
+
+
 
 .full-video {
     width: 950px;

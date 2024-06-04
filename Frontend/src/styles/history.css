@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+.tittleHistory{
+    margin-top: 20px;
+    margin-left: 40px;
+    font-family: 'Tilt Neon';
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    cursor: pointer;
+    
+}
+
+.table th, .table td {
+    border: 1px solid var(--text-color);
+    padding: 8px;
+    text-align: left;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* Estilo de hover */
+.table tr:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* Estilo para la primera columna (ID) */
+.table tr:hover td:first-child {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* Estilo para las demás columnas */
+.table tr:hover td:not(:first-child) {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* Estilo para hover en fila de th */
+.table thead tr:hover th {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}

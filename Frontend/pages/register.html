@@ -15,25 +15,27 @@
             Creando cuenta
         </h3>
     <form action="/register" method="POST" class="form-container">
-
+    <div>
         <span class="title-input">
             Ingresa un nombre de usuario
         </span>
 
         <input type="text" name="userName" class="input">
-
+    </div>
+    <div class="textDiv">
         <span class="title-input">
             Introduce tu correo electronico
         </span>
 
         <input type="email" name="email" class="input">
-
+    </div>
+    <div class="textDiv">
         <span class="title-input">
             Crea una contraseña
         </span>
 
         <input type="password" name="contrasena" class="input">
-
+    </div>
         <button type="submit" class="button-signup">
             Registrate
         </button>
@@ -43,5 +45,6 @@
         <span class="title-input">Ya tienes una cuenta?<a href="/login"><span class="login-tag"> Inicia sesion</span></a></span>
 
     </div>
+    <script src="/services/modes.js"></script>
 </body>
 </html>

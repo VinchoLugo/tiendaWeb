@@ -1,18 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
 :root {
     --black: #1a1a1a;
-    --light-Black: #333;
-    --dark-Black: rgba(0, 0, 0, 0.5);
+    --light-Black: #121212;
+    --dark-Black: #090909;
     --white: #fff;
-    --sky-blue: #00bfff;
+    --sky-blue: #008cff;
     --gold: #ffd700;
     --deep-pink: #ff1493;
-    --navy: #000080;
-    --icons: #d9d8d9;
+    --azulon: #f74c0e;
+    --moradon: #F66D1E; 
+    --rojon: #008cff;
+ 
+    --background-color: var(--black);
+    --text-color: var(--white);
+    --header-background: var(--light-Black);
+    --container-background: var(--light-Black);
+    --input-background: var(--white);
+    --input-color: var(--light-Black);
+    --inner-border: var(--dark-Black);
+    
+    --neon1: var(--deep-pink);
+    --neon2: var(--gold);
+    --neon3: var(--sky-blue);
+}
+
+.light-mode {
+    --background-color: var(--white);
+    --text-color: var(--black);
+    --header-background: #e0e0e0;
+    --container-background: #f0f0f0;
+    --input-background: #333;
+    --input-color: var(--white);
+    --inner-border: var(--white);
+
+    --neon1: var(--azulon);
+    --neon2: var(--moradon);
+    --neon3: var(--rojon);
+
 }
 
 body {
-    background-color: #1a1a1a;
+    background-color: var(--inner-border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,39 +51,34 @@ body {
 }
 
 .container {
-    color: #FFF;
+    color: var(--text-color);
     width: 600px;
-    height: auto; /* Cambia la altura a auto */
-    background-color: #333;
+    height: 600px; 
+    background-color: var(--background-color);
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 20px; /* Añadir padding para mejor presentación */
-    text-align: start;
-<<<<<<< HEAD
-    border: 3px solid var(--gold);
-    box-shadow: 0px 0px 10px 3px var(--gold);
-=======
-    box-sizing: border-box;
+    flex-direction: column;
+    padding: 30px; 
+    text-align: center;
+    border: 3px solid var(--neon2);
+    box-shadow: 0px 0px 10px 3px var(--neon2);
 }
 
-.form-container {
-    width: 100%; /* Asegura que el formulario ocupe el 100% del ancho del contenedor */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
->>>>>>> 9622e2fe00112766ecb9524133826d8d69d4ce89
+.textDiv {
+    margin-top: 10px;
 }
+
 
 .title-create {
-    color: gold;
+    color: var(--neon2);
     margin-top: 20px;
     font-size: 28px;
 }
 
 .title-input {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 18px;
     font-weight: 600;
 }
@@ -79,8 +103,8 @@ body {
     cursor: pointer;
     border-radius: 8px;
     font-size: 14px;
-    background-color: gold;
-    color: #1a1a1a;
+    background-color: var(--neon2);
+    color: var(--background-color);
     font-weight: 600;
 }
 
@@ -89,25 +113,16 @@ body {
     margin-top: 15px;
 }
 
-<<<<<<< HEAD
 .button-signup:hover,
 .button-signup:focus {
-    color: #ffffff;
-    background: var(--gold);
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 5px var(--gold);
+    color: var(--text-color);
+    background: var(--neon2);
+    border: 1px solid var(--neon2);
+    box-shadow: 0 0 5px var(--neon2);
   }
-=======
-.button-signup:hover {
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
-    -moz-box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
-    box-shadow: 0px 0px 10px 3px rgba(255, 215, 0, 0.9);
-    border: none;
-}
->>>>>>> 9622e2fe00112766ecb9524133826d8d69d4ce89
 
 .login-tag:hover {
-    color: gold;
+    color: var(--neon2);
     cursor: pointer;
 }
 
@@ -117,16 +132,16 @@ a {
 }
 
 a.login-tag {
-    color: #000; 
+    color: var(--inner-border); 
     font-weight: bold; 
 }
 
 .password:hover {
-    color: gold;
+    color: var(--neon2);
     cursor: pointer;
 }
 
 a.password {
-    color: #000; 
+    color: var(--inner-border); 
     font-weight: bold; 
 }

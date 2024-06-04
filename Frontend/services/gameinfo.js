@@ -17,7 +17,7 @@ async function fillGameData(gameid) {
     const genres = gameInfo.genres.map(genre => genre.description).join(', ');
     document.querySelector('.genre').innerText += ' ' + genres;
     document.querySelector('.age').innerText += ' ' + gameInfo.required_age;
-    document.querySelector('.developer').innerText += ' ' + gameInfo.publishers;
+    document.querySelector('.developer').innerText += ' ' + gameInfo.publishers.join(', ');
     document.querySelector('.price').innerText += ' ' + gameInfo.price_overview.final_formatted;
 
     const carouselInner = document.querySelector('#carousel-inner');
@@ -103,27 +103,34 @@ async function fillGameData(gameid) {
     });
 }
 
-function addToCart(game) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingGame = cart.find(item => item.id === game.steam_appid);
-
-    if (existingGame) {
-        existingGame.quantity++;
-    } else {
-        const gameItem = {
-            id: game.steam_appid,
-            name: game.name,
-            price: game.price_overview.final,
-            quantity: 1,
-            header_image: game.header_image,
-        };
-        cart.push(gameItem);
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${game.name} ha sido añadido al carrito.`);
+function getUserId() {
+    // Supón que esta función obtiene el ID del usuario actual desde la sesión o el contexto de la aplicación.
+    return 1; // Reemplaza con la lógica real para obtener el ID del usuario.
 }
 
+function addToCart(game) {
+    fetch('/add-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            appid: game.steam_appid, // Asegúrate de que esta propiedad sea la correcta para identificar el juego
+            quantity: 1 // Si deseas permitir añadir más de una unidad a la vez, puedes modificar esto
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert(`${game.name} ha sido añadido al carrito.`);
+        } else {
+            throw new Error('Error al agregar el juego al carrito.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Ocurrió un error al agregar el juego al carrito.');
+    });
+}
 
 window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);

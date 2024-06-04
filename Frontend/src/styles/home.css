@@ -1,25 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
-:root {
-    --black: #1a1a1a;
-    --light-Black: #121212;
-    --dark-Black: rgba(0, 0, 0, 0.5);
-    --white: #fff;
-    --sky-blue: #008cff;
-    --gold: #ffd700;
-    --deep-pink: #ff1493;
-    --navy: #000080;
-}
-
 .principals{
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    background: var(--dark-Black);
-    border: 3px solid var(--gold);
-    box-shadow: 0px 0px 10px 3px var(--gold);
+    background: var(--inner-border);
+    border: 3px solid var(--neon2);
+    box-shadow: 0px 0px 10px 3px var(--neon2);
+    cursor: pointer;
 }
 
 ::placeholder{
@@ -43,11 +33,11 @@
 }
 
 .sidebar{
-    background: var(--dark-Black);
+    background: var(--inner-border);
     border-radius: 10px;
     text-align: center;
-    border: 3px solid var(--sky-blue);
-    box-shadow: 0px 0px 10px 3px var(--sky-blue);
+    border: 3px solid var(--neon3);
+    box-shadow: 0px 0px 10px 3px var(--neon3);
 }
 
 .sidebar h2{
@@ -63,7 +53,7 @@
 .sidebar a{
     text-decoration: none;
     font-family: "Noto Sans", sans-serif;
-    color: var(--white);
+    color: var(--text-color);
 }
 
 .genres{
@@ -77,7 +67,7 @@
     font-size: 17px;
     font-family: 'Tilt Neon';
     font-weight: 500;
-    color: #ffffff80;
+    color: var(--text-color);
     text-shadow: none;
     background: transparent;
     cursor: pointer;
@@ -90,83 +80,18 @@
 .genrebtn:hover,
 .genrebtn:focus {
     color: #ffffff;
-    background: #008cff;
-    border: 1px solid #008cff;
+    background: var(--neon3);
+    border: 1px solid var(--neon3);
     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
-      0 0 100px #008cff;
+    box-shadow: 0 0 5px var(--neon3), 0 0 20px var(--neon3), 0 0 50px var(--neon3),
+      0 0 100px var(--neon3);
   }
 
   .genrebtn.clicked {
     color: #ffffff;
-    background: #008cff;
-    border: 1px solid #008cff;
+    background: var(--neon3);
+    border: 1px solid var(--neon3);
     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
-      0 0 100px #008cff;
-}
-
-
-/* Modal styles */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-    max-width: 500px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation-name: modalopen;
-    animation-duration: 0.4s;
-}
-
-@keyframes modalopen {
-    from {opacity: 0}
-    to {opacity: 1}
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#userEmail{
-    color: black;
-    font-size: 20px;
-}
-
-#userInfo{
-    color: black;
-    text-transform: uppercase;
-}
-
-.logout-button{
-    text-decoration: none;
-}
-
-#userName{
-    color: black;
-    font-size: 20px;
+    box-shadow: 0 0 5px var(--neon3), 0 0 20px var(--neon3), 0 0 50px var(--neon3),
+      0 0 100px var(--neon3);
 }

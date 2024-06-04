@@ -1,14 +1,11 @@
 const bcrypt = require('bcryptjs');
 const conexion = require('../services/db');
 
-//Agregar nombre de usuario tambien en la base de datos**
-//Modificar la tabla de la base de la base de datos**
-//name es userName en el html
+// Función para registrar un usuario
 const registerUser = async (req, res) => {
     const { userName, email, contrasena } = req.body;
     const hashedPassword = await bcrypt.hash(contrasena, 10);
 
-    //Modificar sql
     const sql = 'INSERT INTO users (user, email, contrasena) VALUES (?, ?, ?)';
     conexion.query(sql, [userName, email, hashedPassword], (err, result) => {
         if (err) {
@@ -20,6 +17,7 @@ const registerUser = async (req, res) => {
     });
 };
 
+// Función para iniciar sesión
 const loginUser = async (req, res) => {
     const { email, contrasena } = req.body;
 
@@ -40,13 +38,13 @@ const loginUser = async (req, res) => {
             return res.status(401).send('La contraseña proporcionada es incorrecta');
         }
 
-        req.session.user = { user: usuario.user, email: usuario.email }; 
+        req.session.user = { id: usuario.id, user: usuario.user, email: usuario.email }; // Asegúrate de que el ID del usuario se guarda en la sesión
         console.log('Usuario logeado:', req.session.user); 
         res.redirect('/');
     });
 };
 
-
+// Función para cerrar sesión
 const logoutUser = (req, res) => {
     req.session.destroy((err) => {
         if (err) {
@@ -56,4 +54,35 @@ const logoutUser = (req, res) => {
     });
 };
 
-module.exports = { registerUser, loginUser, logoutUser };
+
+// Función para obtener el carrito de compras y el historial de compras de un usuario
+const getUserData = (req, res) => {
+    const userId = req.session.user.id; // Obtener el ID del usuario de la sesión
+    const cartQuery = 'SELECT * FROM carts WHERE user_id = ?';
+    const historyQuery = 'SELECT * FROM purchase_history WHERE user_id = ?';
+
+    conexion.query(cartQuery, [userId], (err, cartResults) => {
+        if (err) {
+            console.log('Error al obtener el carrito de compras:', err);
+            return res.status(500).send('Error al obtener el carrito de compras');
+        }
+        conexion.query(historyQuery, [userId], (err, historyResults) => {
+            if (err) {
+                console.log('Error al obtener el historial de compras:', err);
+                return res.status(500).send('Error al obtener el historial de compras');
+            }
+            const cart = cartResults.map(item => ({ appid: item.appid, quantity: item.quantity }));
+            const history = historyResults.map(item => ({
+                appid: item.appid,
+                purchaseDate: item.purchase_date,
+                quantity: item.quantity,
+                price: item.price
+            }));
+            res.json({ cart, history });
+        });
+    });
+};
+
+
+
+module.exports = { registerUser, loginUser, logoutUser, getUserData };

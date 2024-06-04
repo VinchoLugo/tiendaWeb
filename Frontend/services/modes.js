@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggle = document.getElementById('theme-checkbox');
 
     // Comprobar la preferencia de tema del usuario
     if (localStorage.getItem('theme') === 'light') {

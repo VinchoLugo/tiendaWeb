@@ -13,18 +13,6 @@
     height: 100px;
 }
 
-/* Additional styles */
-:root {
-    --black: #1a1a1a;
-    --light-Black: #121212;
-    --dark-Black: rgba(0, 0, 0, 0.5);
-    --white: #fff;
-    --sky-blue: #008cff;
-    --gold: #ffd700;
-    --deep-pink: #ff1493;
-    --navy: #000080;
-}
-
 .container1 {
     margin-left: 70px;
     margin-right: 70px;
@@ -109,24 +97,24 @@
     font-size: 17px;
     font-family: 'Tilt Neon';
     font-weight: 500;
-    color: #ffffff80;
+    color: var(--text-color);
     text-shadow: none;
     background: transparent;
     cursor: pointer;
     box-shadow: transparent;
-    border: 2px solid #ffffffd4;
+    border: 2px solid var(--text-color);
     transition: 0.5s ease;
     user-select: none;
 }
 
 .buybutton:hover,
 .buybutton:focus {
-    color: #ffffff;
-    background: var(--deep-pink);
-    border: 1px solid var(--deep-pink);
+    color: var(--white);
+    background: var(--neon1);
+    border: 1px solid var(--neon1);
     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px var(--deep-pink), 0 0 10px var(--deep-pink), 0 0 20px var(--deep-pink),
-      0 0 40px var(--deep-pink);
+    box-shadow: 0 0 5px var(--neon1), 0 0 10px var(--neon1), 0 0 20px var(--neon1),
+      0 0 40px var(--neon1);
   }
 
 

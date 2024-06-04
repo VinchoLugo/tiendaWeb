@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamesChest - Carrito</title>
+    <title>GamesChest - Historial de Compras</title>
     <script src="/services/user.js" defer></script>
     <link rel="stylesheet" href="/src/styles/default.css">
     <link rel="stylesheet" href="/src/styles/wishlist.css">
+    <link rel="stylesheet" href="/src/styles/history.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -42,7 +43,6 @@
                 </label>
             </div>
         </div>
-        
         <div class="searchBar">
             <input type="text">
             <button><img src="/src/imgs/busqueda.png" alt="" class="icon-search"></button>
@@ -54,15 +54,27 @@
             <a href="#"><i class="fas fa-shopping-cart icon icon-cart"></i></a>
         </div>
     </header>
-
     <div class="tittleHistory">
-        Carrito de compras
+        <h1>Historial de compras</h1>
     </div>
     <main class="main">
-        <div class="cart-container">
-            <div id="cart-items"></div>
-            <button id="clear-cart" class="btn btn-danger mt-3">Vaciar Carrito</button>
-            <button id="openModal" class="purchase-btn">Realizar compra</button>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha de Compra</th>
+                        <th>Nombre del Juego</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody id="purchase-history">
+                    <!-- Aquí se llenarán dinámicamente los datos del historial de compras -->
+                </tbody>
+            </table>
         </div>
     </main>
 
@@ -91,39 +103,11 @@
         </div>
     </div>
 
-    <div id="paymentModal" class="modalCart">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Pago con Tarjeta</h2>
-            <form id="paymentForm">
-                <div class="cont">
-                    <label for="cardName">Nombre en la Tarjeta:  </label>
-                    <input type="number" id="cardName" name="cardName" required>
-                </div>
-                <div class="cont">
-                    <label for="cardNumber">Número de la Tarjeta:  </label>
-                    <input type="number" maxlength="19" id="cardNumber" name="cardNumber" required>
-                </div>
-                <div class="cont">
-                    <label for="expiryDate">Fecha de Expiración:  </label>
-                    <input type="number" maxlength="4" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
-                </div>
-                <div class="cont">
-                    <label for="cvv">CVV:  </label>
-                    <input type="number" maxlength="3" id="cvv" name="cvv" required>
-                </div>
-                <div class="cont">
-                    <button id="purchase" type="submit">Pagar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <script src="/services/cartAlert.js"></script>
-    <script src="/services/cart.js"></script>
-    <script src="/services/searchBar.js"></script>
-    <script src="/services/modes.js"></script>
-    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="/services/history.js"></script>
+    <script src="/services/user.js" defer></script>
+    <script src="/services/searchBar.js"></script>
+    <script src="/services/modes.js"></script>
 </body>
 </html>

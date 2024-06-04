@@ -3,6 +3,8 @@ const router = express.Router();
 const path = require('path');
 const userController = require('../controllers/userController');
 const passwordController = require('../controllers/passwordController');
+const addToCartController = require('../controllers/addToCartController');
+
 const bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -34,6 +36,14 @@ router.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'register.html'));
 });
 
+router.get('/history', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'history.html'));
+});
+
+router.get('/cart', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'shoppingcart.html'));
+});
+
 router.post('/login', userController.loginUser);
 router.get('/logout', userController.logoutUser);
 
@@ -45,11 +55,6 @@ router.get('/resetPassword/:token', (req, res) => {
     res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'resetPassword.html'));
 });
 
-<<<<<<< HEAD
-router.get('/cart', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'pages', 'shoppingcart.html'));
-});
-=======
 router.post('/resetPassword', passwordController.resetPassword);
 
 router.get('/get-user', (req, res) => {
@@ -60,5 +65,14 @@ router.get('/get-user', (req, res) => {
     }
 });
 
->>>>>>> 9622e2fe00112766ecb9524133826d8d69d4ce89
+router.post('/add-to-cart', addToCartController.addToCart);
+router.get('/get-cart', addToCartController.getCart);
+router.get('/get-history', addToCartController.getHistory);
+router.post('/remove-from-cart', addToCartController.removeFromCart);  // Nueva ruta para eliminar un juego
+router.post('/clear-cart', addToCartController.clearCart);  // Nueva ruta para limpiar el carrito
+
+router.get('/user-data', userController.getUserData);
+
+router.post('/purchase', addToCartController.purchaseItems);
+
 module.exports = router;

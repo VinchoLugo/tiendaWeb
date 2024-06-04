@@ -68,8 +68,8 @@ router.get('/get-user', (req, res) => {
 router.post('/add-to-cart', addToCartController.addToCart);
 router.get('/get-cart', addToCartController.getCart);
 router.get('/get-history', addToCartController.getHistory);
-router.post('/remove-from-cart', addToCartController.removeFromCart);  // Nueva ruta para eliminar un juego
-router.post('/clear-cart', addToCartController.clearCart);  // Nueva ruta para limpiar el carrito
+router.post('/remove-from-cart', addToCartController.removeFromCart); 
+router.post('/clear-cart', addToCartController.clearCart);  
 
 router.get('/user-data', userController.getUserData);
 

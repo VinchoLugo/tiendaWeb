@@ -139,6 +139,11 @@ main {
     width: 100%; 
 }
 
+.footer2 {
+    
+    position: fixed;
+}
+
 .footer .logo {
     margin-left: auto; 
     width: 80px;
@@ -389,4 +394,30 @@ main {
   #theme-checkbox + label span:last-of-type {
     color: #cecece;
   }
+
+  .view-history-button{
+    border-radius: 8px;
+    font-size: 17px;
+    font-family: 'Tilt Neon';
+    font-weight: 500;
+    color: #ffffff94;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 2px solid #ffffffd4;
+    transition: 0.5s ease;
+    user-select: none;
+}
+
+
+.view-history-button:hover,
+.view-history-button:focus {
+    color: #ffffff;
+    background: var(--neon3);
+    border: 1px solid var(--neon3);
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px var(--neon3);
+  }
+
   

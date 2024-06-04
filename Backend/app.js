@@ -6,6 +6,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const MySQLStore = require('express-mysql-session')(session);
+require('dotenv').config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -14,10 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const conexion = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Admin1234",
-  database: "tiendaweb"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: "3306"
 });
 
 const sessionStore = new MySQLStore({}, conexion);
